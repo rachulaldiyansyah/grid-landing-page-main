@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'inter';
+    color: hsl(0, 0%, 100%);
+}
+
+.container {
+    width :100%;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr ;
+    grid-template-rows: .3fr 3fr .3fr ;
+    grid-template-areas:'nav nav nav'
+                        'hero stats stats'
+                        'hero stats stats'
+                        'footer footer footer';
+    background-color:hsl(228, 100%, 60%) ;
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.541);
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.bridge {
+    margin-left: 20px;
+}
+
+.hero {
+    grid-area: hero;
+    display: grid;
+    justify-content: start;
+    align-content: center;
+    margin-left: 50px;
+    border-right: 1px solid hsla(0, 0%, 100%, 0.541);
+}
+
+h1 {
+    max-width: 340px;
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.hero-caption {
+    max-width: 400px;
+    margin-top: 50px;
+    color: hsla(0, 0%, 100%, 0.541);
+}
+
+.container-stats {
+    grid-area: stats;
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 'student-reached schools-patnered'
+                         'Teachers-trained Graduation-lift';
+
+}
+
+.stats-student {
+    grid-area: student-reached;
+    border-right: 1px solid hsla(0, 0%, 100%, 0.541) ;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.541);
+    display: flex;
+    flex-direction: column;
+}
+
+.container-sparkle,
+.container-plus,
+.container-right,
+.container-trending {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.container-caption-student,
+.container-caption-schools,
+.container-caption-teachers,
+.container-caption-graduation {
+    margin-top : auto;
+    padding: 0 25px 25px;
+}
+
+.caption-student,
+.caption-schools,
+.caption-teachers,
+.caption-graduation {
+    color: hsla(0, 0%, 99%, 0.616);
+    margin-top: 5px;
+}
+
+
+
+
+.score-student,
+.score-schools,
+.score-teachers,
+.score-graduation {
+    font-size: 30px;
+}
+
+.stats-schools {
+    grid-area: schools-patnered;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.541);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.stats-teachers {
+    grid-area: Teachers-trained;
+    border-right: 1px solid hsla(0, 0%, 100%, 0.541);
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-graduation {
+    grid-area: Graduation-lift;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+footer {
+    grid-area: footer;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid hsla(0, 28%, 91%, 0.336) ;
+}
+
+.stats-student:hover,
+.stats-teachers:hover,
+.stats-schools:hover,
+.stats-graduation:hover {
+    background-color:hsla(0, 0%, 100%, 0.541);
+}
+
+
+
+@font-face {
+    font-family: 'inter';
+    src: url(./assets/fonts/inter/inter-variable.ttf)
+    format('truetype');
+    font-weight: 400 ;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url(./assets/fonts/inter/inter-variable.ttf)
+    format('truetype');
+    font-weight: 500 ;
+    font-style: normal;
+}
+
+@media screen and (max-width : 567px) {
+    .container {
+    width :100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-areas:'nav nav nav'
+                        'hero hero hero'
+                        'stats stats stats'
+                        'footer footer footer';
+    background-color:hsl(228, 100%, 60%) ;
+    }
+
+    .container-stats {
+    grid-area: stats;
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: 1fr ;
+    grid-template-areas:'student-reached'
+                        'schools-patnered'
+                        'Teachers-trained'
+                        'Graduation-lift';
+
+}
+
+    
+}
